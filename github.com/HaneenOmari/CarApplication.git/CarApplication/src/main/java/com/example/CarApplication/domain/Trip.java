@@ -2,15 +2,19 @@ package com.example.CarApplication.domain;
 
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 //hhhhghddhh
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
 @Entity
 public class Trip {
@@ -59,7 +63,11 @@ public class Trip {
     @JoinTable(name = "car_trip", joinColumns = { @JoinColumn(name =
      "tripid") }, inverseJoinColumns = { @JoinColumn(name = "id") }) 
     private Set<Car> cars = new HashSet<Car>(0); 
+//
+//	 @OneToMany(cascade = CascadeType.ALL, mappedBy="person_trip_id")
+//	 private List<Person_Trip> person_trip;
 
+	
     public Set<Car> getCars() {
       return cars;
     }

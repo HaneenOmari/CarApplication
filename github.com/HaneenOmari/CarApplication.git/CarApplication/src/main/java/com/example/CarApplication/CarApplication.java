@@ -14,6 +14,8 @@ import com.example.CarApplication.domain.Car;
 import com.example.CarApplication.domain.CarRepository;
 import com.example.CarApplication.domain.Owner;
 import com.example.CarApplication.domain.OwnerRepository;
+import com.example.CarApplication.domain.Person;
+//import com.example.CarApplication.domain.Person_Trip;
 import com.example.CarApplication.domain.Trip;
 import com.example.CarApplication.domain.TripRepository;
 
@@ -45,7 +47,7 @@ import com.example.CarApplication.domain.TripRepository;
            orepository.save(owner2);
 
            // Add car object with link to owners and save these to db.
-           Car car1 = new Car("Ford", "Mustang", "Red","ADF-1121", 2017, 59000, owner1);
+           Car car1 = new Car("mazda", "Mustang", "Red","ADF-1121", 2017, 59000, owner1);
            repository.save(car1);
           Car car2 = new Car("Nissan", "Leaf", "White","SSJ-3002", 2014, 29000, owner2);
            repository.save(car2);
@@ -57,6 +59,10 @@ import com.example.CarApplication.domain.TripRepository;
            cars.add(car3);
 
            Trip trip1=new Trip("London",cars);
+           
+         //  Person person1 = new Person();
+          // Person_Trip person_trip1 = new Person_Trip("..",person1,trip1);
+
          };
        }
      }
